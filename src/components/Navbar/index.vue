@@ -1,7 +1,9 @@
 <template>
   <div>
     <NavbarTop @menu-clicked="menuClicked()" />
-    <NavbarBottom @menu-closed="menuClosed()" :class="{ 'hidden lg:block':!mobileMenu }"/>
+    <NavbarBottom @menu-closed="menuClosed()" 
+    class="transition-all duration-500"
+    :class="mobileMenu ? 'left-0': 'left-[-100%] lg:left-0'"/>
   </div>
 </template>
 

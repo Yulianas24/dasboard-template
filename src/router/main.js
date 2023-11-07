@@ -3,7 +3,6 @@ import UserView from '@/views/user/index.vue'
 import UserCreateView from '@/views/user/create.vue'
 import UserUpdateView from '@/views/user/update.vue'
 
-import ExampleLayout from '@/layouts/ExampleLayout.vue';
 import DashboardLayout from '@/layouts/DashboardLayout.vue';
 // middleware
 import AuthMiddleware from '@/middleware/auth.middleware.js';
@@ -24,7 +23,7 @@ export default [{
     component: UserView,
     meta: {
       title: 'User',
-      layout: ExampleLayout,
+      layout: DashboardLayout,
       middleware: [AuthMiddleware],
     },
   },
@@ -34,7 +33,7 @@ export default [{
     component: UserCreateView,
     meta: {
       title: 'User Create',
-      layout: ExampleLayout,
+      layout: DashboardLayout,
       middleware: [AuthMiddleware],
     },
   },
@@ -44,7 +43,7 @@ export default [{
     component: UserUpdateView,
     meta: {
       title: 'User Update',
-      layout: ExampleLayout,
+      layout: DashboardLayout,
       middleware: [AuthMiddleware],
     },
   }
