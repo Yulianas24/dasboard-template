@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Inter';
+  src: local('Inter'), url('@/assets/fonts/Inter-VariableFont_slnt,wght.ttf') format('truetype');
+  font-display: swap;
+}
+* {
+  font-family: 'Inter';
+}
+
+@layer components {
+  .underline-menu {
+    @apply relative before:absolute before:bg-white before:rounded-t-lg before:bottom-0 before:left-0 lg:before:h-[5px]  before:w-full before:origin-bottom before:scale-x-[0] hover:before:scale-x-100 before:transition-transform before:ease-in-out before:duration-300;
+  }
+  .active-menu {
+    @apply relative before:absolute before:bg-white before:rounded-t-lg before:bottom-0 before:left-0 lg:before:h-[7px] before:w-full before:origin-bottom before:scale-x-100 before:transition-transform before:ease-in-out before:duration-300;
+  }
+}
