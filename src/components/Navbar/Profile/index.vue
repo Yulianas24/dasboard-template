@@ -8,7 +8,7 @@
       </button>
     </div>
     <!-- menu  -->
-    <div class="fixed peer-hover:grid  top-0 bg-white z-[999999] -right-[300px] transition-all border-l duration-700  w-[300px] h-screen overflow-auto"
+    <div ref="profileMenu" class="fixed top-0 bg-white z-[999999] -right-[300px] transition-all border-l duration-700  w-[300px] h-screen overflow-auto"
       :class="{'right-0':isOpen}">
       <!-- profile -->
       <div class="grid gap-3 justify-items-center content-start p-5 w-full h-full">
@@ -69,18 +69,17 @@ import ProfileCard from './ProfileCard.vue';
 import Button from './ProfileButton.vue';
 import Dropdown from './ProfileDropdown.vue';
 
-
 const isOpen = ref(false);
 const profileButton = ref()
-
+const profileMenu = ref()
 
 const openEvent = ((e) => {
   if(e.target == profileButton.value){
     isOpen.value = true
   } else {
+    if(e.target.className != 'profile-dropdown')
     isOpen.value = false
   }
-  console.log(isOpen.value)
 })
 onMounted(() => {
   window.addEventListener('click', openEvent)
