@@ -32,7 +32,7 @@
 
 <style scoped>
 .button-list {
-  @apply flex lg:h-full w-full justify-between items-center gap-1 text-white font-semibold text-sm py-4;
+  @apply flex lg:h-full w-full justify-between items-center gap-1 text-white text-sm py-4;
 }
 .menu-list {
   @apply lg:absolute z-[500] lg:bg-white overflow-hidden lg:rounded-b-md transition-all duration-300;

@@ -1,6 +1,6 @@
 <template>
   <div class="fixed z-[99999] lg:relative top-0 w-full" @click.self="emits('menu-closed')">
-    <nav id="navbar-bottom" class="lg:relative bg-[#663BCB] w-1/2 lg:w-full h-screen lg:h-fit">
+    <nav id="navbar-bottom" class="lg:relative bg-primary-900 w-1/2 lg:w-full h-screen lg:h-fit">
       <div class="flex py-6 lg:py-0 flex-wrap flex-col gap-1 lg:gap-x-5 lg:flex-row lg:px-5 lg:items-center w-full lg:w-full h-full nav-main">
         
         <!-- dashboard button -->
@@ -122,7 +122,7 @@ const emits = defineEmits(['menu-closed']);
     background-image: url('@/assets/nav-bg.svg');
   }
   .dropdown-menu {
-    @apply flex w-full justify-start border-b border-white/20 text-sm lg:font-semibold px-5 pl-8 lg:pl-5 py-2 lg:py-3 text-white lg:text-black hover:bg-primary/20
+    @apply flex w-full justify-start border-b border-white/20 text-sm px-5 pl-8 lg:pl-5 py-2 lg:py-3 text-white lg:text-black hover:bg-primary-500/20
   }
 
 

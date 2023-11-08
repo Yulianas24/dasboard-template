@@ -2,7 +2,7 @@
   <div class="flex items-center gap-5">
     <div class="flex items-center gap-2">
       <button ref="profileButton" 
-        class="flex flex-none justify-center items-center text-primary bg-gray-300 w-[35px] h-[35px] rounded-full"
+        class="flex flex-none justify-center items-center text-primary-500 bg-gray-300 w-[35px] h-[35px] rounded-full"
         @click="isOpen = !isOpen">
         <!-- <i class="text-xl ri-user-line"></i> -->
       </button>
@@ -24,10 +24,9 @@
             Profile
           </Button>
           <hr class="my-3">
-          <Dropdown>
+          <Dropdown name="Account settings" :isActive="isActive" @clickedDropdown="(e) => isActive = e">
             <template #button>
               <i class="ri-user-settings-line text-base"></i>
-              Account settings
             </template>
             <template #list>
               <div class="grid"> 
@@ -38,10 +37,10 @@
             </template>
           </Dropdown>
           
-          <Dropdown>
+          <Dropdown name="Pause notification" :isActive="isActive" @clickedDropdown="(e) => isActive = e">
             <template #button>
               <i class="ri-notification-off-line"></i>
-              Pause notification
+              
             </template>
             <template #list>
               <div class="grid"> 
@@ -68,6 +67,8 @@ import { ref, onMounted, onUnmounted } from 'vue';
 import ProfileCard from './ProfileCard.vue';
 import Button from './ProfileButton.vue';
 import Dropdown from './ProfileDropdown.vue';
+
+const isActive = ref('')
 
 const isOpen = ref(false);
 const profileButton = ref()

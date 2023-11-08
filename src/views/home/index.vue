@@ -1,14 +1,14 @@
 <template>
   
-  <section class="grid md:grid-cols-2 lg:grid-cols-4 gap-5 pb-5 ">
+  <section class="grid md:grid-cols-2 lg:grid-cols-4 gap-5 pb-5">
     <div class="bg-gray-200 min-h-[200px] w-full rounded-lg"></div>
     <div class="bg-gray-200 min-h-[200px] w-full rounded-lg"></div>
     <div class="bg-gray-200 min-h-[200px] w-full rounded-lg"></div>
     <div class="bg-gray-200 min-h-[200px] w-full rounded-lg"></div>
   </section>
 
-  <section class="grid md:grid-cols-2 lg:grid-cols-4 gap-5 pb-5 ">
-    <div  ref="mapContainer" class="bg-gray-200 min-h-[200px] w-full rounded-lg row-span-2 col-span-3"></div>
+  <section class="grid md:grid-cols-2 lg:grid-cols-4 gap-5 pb-5">
+    <div  ref="mapContainer" class="bg-gray-200 min-h-[200px] w-full rounded-lg md:row-span-2 md:col-span-2 lg:col-span-3"></div>
     <div class="bg-gray-200 min-h-[200px] w-full rounded-lg"></div>
     <div class="bg-gray-200 min-h-[200px] w-full rounded-lg"></div>
   </section>
