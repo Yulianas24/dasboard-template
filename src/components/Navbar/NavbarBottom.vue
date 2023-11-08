@@ -4,9 +4,11 @@
       <div class="flex py-6 lg:py-0 flex-wrap flex-col gap-1 lg:gap-x-5 lg:flex-row lg:px-5 lg:items-center w-full lg:w-full h-full nav-main">
         
         <!-- dashboard button -->
-        <Button name="Dashboard">
-          <i class="ri-dashboard-line font-light"></i>
-        </Button>
+        <router-link to="/">
+          <Button name="Dashboard" :active="route.meta.group == 'dashboard'">
+            <i class="ri-dashboard-line font-light"></i>
+          </Button>
+        </router-link>
         <!-- end of dashboard button -->
 
         <!-- karyawan menu -->
@@ -107,6 +109,9 @@
 import Dropdown from '../Partials/NavbarDropdown.vue';
 import Button from '../Partials/NavbarButton.vue';
 
+import { useRoute } from 'vue-router';
+
+const route = useRoute()
 const emits = defineEmits(['menu-closed']);
 
 
@@ -115,13 +120,6 @@ const emits = defineEmits(['menu-closed']);
 <style scoped>
   .nav-main {
     background-image: url('@/assets/nav-bg.svg');
-  }
-  .button-list {
-    @apply flex lg:h-full w-full justify-between items-center gap-1 text-white font-semibold text-sm  py-1;
-  }
-  .menu-list {
-    @apply lg:absolute top-[60px] z-50 grid lg:min-w-[200px] lg:w-fit lg:bg-white overflow-hidden h-fit lg:rounded-b-md;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
   }
   .dropdown-menu {
     @apply flex w-full justify-start border-b border-white/20 text-sm lg:font-semibold px-5 pl-8 lg:pl-5 py-2 lg:py-3 text-white lg:text-black hover:bg-primary/20

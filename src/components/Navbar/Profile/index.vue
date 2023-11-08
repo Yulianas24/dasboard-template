@@ -1,18 +1,20 @@
 <template>
   <div class="flex items-center gap-5">
-    <div class="peer flex items-center gap-2">
-      <button class="flex flex-none justify-center items-center text-primary bg-gray-300 w-[35px] h-[35px] rounded-full">
+    <div class="flex items-center gap-2">
+      <button ref="profileButton" 
+        class="flex flex-none justify-center items-center text-primary bg-gray-300 w-[35px] h-[35px] rounded-full"
+        @click="isOpen = !isOpen">
         <!-- <i class="text-xl ri-user-line"></i> -->
       </button>
     </div>
     <!-- menu  -->
-    <div class="fixed peer-hover:grid  top-0 bg-white z-[999999] -right-[300px] peer-hover:right-0 hover:right-0 transition-all border-l duration-700  w-[300px] h-screen overflow-auto">
+    <div class="fixed peer-hover:grid  top-0 bg-white z-[999999] -right-[300px] transition-all border-l duration-700  w-[300px] h-screen overflow-auto"
+      :class="{'right-0':isOpen}">
       <!-- profile -->
       <div class="grid gap-3 justify-items-center content-start p-5 w-full h-full">
         <!-- card -->
-        <Card/>
+        <ProfileCard/>
         <div class="grid w-full p-5 h-fit border rounded-lg">
-          
           <Button>
             <i class="ri-user-settings-line text-base"></i>
             Account settings
@@ -62,7 +64,29 @@
   </div>
 </template>
 <script setup>
-import Card from './ProfileCard.vue';
+import { ref, onMounted, onUnmounted } from 'vue';
+import ProfileCard from './ProfileCard.vue';
 import Button from './ProfileButton.vue';
 import Dropdown from './ProfileDropdown.vue';
+
+
+const isOpen = ref(false);
+const profileButton = ref()
+
+
+const openEvent = ((e) => {
+  if(e.target == profileButton.value){
+    isOpen.value = true
+  } else {
+    isOpen.value = false
+  }
+  console.log(isOpen.value)
+})
+onMounted(() => {
+  window.addEventListener('click', openEvent)
+});
+
+onUnmounted(() => {
+  window.removeEventListener('click', openEvent)
+});
 </script>

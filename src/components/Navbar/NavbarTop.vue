@@ -7,41 +7,18 @@
       <h1 class="text-lg font-bold">Jenjang.id</h1>
     </div>
     <!-- profile -->
-    <div class="flex gap-3">
-      <button ref="notificationButton" id="notification-list" class="text-gray-700 text-2xl" @click="openList = 'notification'">
-        <i class="pointer-events-none ri-notification-4-line"></i>
-      </button>
+    <div class="flex items-center gap-3">
+      <Notification/>
       <ProfileMenu/>
     </div>
   </nav>
 </template> 
 
 <script setup>
-// import ProfileCard from './ProfileCard.vue';
-import { ref, onMounted, onUnmounted } from 'vue';
 import ProfileMenu from '../Navbar/Profile/index.vue';
+import Notification from './Notification.vue';
 const emits = defineEmits(['menuClicked']);
 
-const notificationButton = ref()
-const openList = ref(null);
-
-
-// click event
-const openEvent = ((event) => {
-  if (event.target != notificationButton.value) {
-    openList.value = null
-  }
-  console.log(openList.value)
-
-})
-
-onMounted(() => {
-  window.addEventListener('click', openEvent);
-
-});
-
-onUnmounted(() => {
-  window.removeEventListener('click', openEvent)
-});
-
 </script>
+
+

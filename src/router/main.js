@@ -13,8 +13,9 @@ export default [{
     component: HomeView,
     meta: {
       title: 'Home',
+      group: 'dashboard',
       layout: DashboardLayout,
-      // middleware: [AuthMiddleware],
+      middleware: [AuthMiddleware],
     },
   },
   {
